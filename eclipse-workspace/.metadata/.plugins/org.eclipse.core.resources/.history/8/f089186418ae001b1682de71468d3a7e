@@ -1,0 +1,70 @@
+package mianThread;
+
+import database.DataBase;
+
+public class TransferToAdaptinveDataType {
+	public String[] rawCourseListToStream(String[] rawCourseList) {
+		int counter = 0;
+		int numOfSlelction = rawCourseList.length;
+		String[] adaptive = new String[200];
+		for (int i = 0; i < numOfSlelction; i++) {
+			if (rawCourseList[i].equals("eecs1012")) {
+				for (int j = 0; j < DataBase.eecs1012SecC.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecA[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.eecs1012SecB.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecB[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.eecs1012SecB.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecC[j];
+					++counter;
+				}
+			}
+			if (rawCourseList[i].equals("math2030")) {
+				for (int j = 0; j < DataBase.math2030SecF.length; j++) {
+					adaptive[counter] = DataBase.math2030SecF[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math2030SecO.length; j++) {
+					adaptive[counter] = DataBase.math2030SecO[j];
+					++counter;
+				}
+			}
+			if (rawCourseList[i].equals("math1013")) {
+				for (int j = 0; j < DataBase.math1013SecA.length; j++) {
+					adaptive[counter] = DataBase.math1013SecA[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecD.length; j++) {
+					adaptive[counter] = DataBase.math1013SecD[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecF.length; j++) {
+					adaptive[counter] = DataBase.math1013SecF[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecL.length; j++) {
+					adaptive[counter] = DataBase.math1013SecL[j];
+					++counter;
+				}
+			}
+			if (rawCourseList[i].equals("econ1010")) {
+				for (int j = 0; j < DataBase.econ1010SecG.length; j++) {
+					adaptive[counter] = DataBase.econ1010SecG[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.econ1010SecM.length; j++) {
+					adaptive[counter] = DataBase.econ1010SecM[j];
+					++counter;
+				}
+			}
+		}
+
+		for (String string : adaptive) {
+			System.out.println(string);
+		}
+		return rawCourseList;
+	}
+}

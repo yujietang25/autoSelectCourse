@@ -1,0 +1,7 @@
+package mianThread;
+
+public class TransferToAdaptinveDataType {
+	public String[] RawCourseListToStream(String[] rawCourseList) {
+		
+	}
+}

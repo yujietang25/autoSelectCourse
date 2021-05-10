@@ -1,0 +1,12 @@
+package mianThread;
+
+import java.util.Scanner;
+
+class getInputs {
+	public static void run() {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("您想报几门课？");
+		int num=scan.nextLine();
+		
+	}
+}

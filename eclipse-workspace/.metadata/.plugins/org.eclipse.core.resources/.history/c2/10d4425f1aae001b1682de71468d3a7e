@@ -1,0 +1,86 @@
+package mianThread;
+
+import java.util.Arrays;
+import java.util.HashMap;
+
+import database.DataBase;
+
+public class TransferToAdaptinveDataType {
+	private HashMap<String, Integer> courseSecCounts = new HashMap<String, Integer>();
+
+	public String[] rawCourseListToStream(String[] rawCourseList) {
+		int counter = 0;
+		int numOfSlelction = rawCourseList.length;
+		String[] adaptive = new String[200];
+		for (int i = 0; i < numOfSlelction; i++) {
+			if (rawCourseList[i].equals("eecs1012")) {
+				for (int j = 0; j < DataBase.eecs1012SecC.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecA[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.eecs1012SecB.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecB[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.eecs1012SecB.length; j++) {
+					adaptive[counter] = DataBase.eecs1012SecC[j];
+					++counter;
+				}
+				this.courseSecCounts.put("eecs1012", 3);
+			}
+			if (rawCourseList[i].equals("math2030")) {
+				for (int j = 0; j < DataBase.math2030SecF.length; j++) {
+					adaptive[counter] = DataBase.math2030SecF[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math2030SecO.length; j++) {
+					adaptive[counter] = DataBase.math2030SecO[j];
+					++counter;
+				}
+				this.courseSecCounts.put("math2030", 2);
+			}
+			if (rawCourseList[i].equals("math1013")) {
+				for (int j = 0; j < DataBase.math1013SecA.length; j++) {
+					adaptive[counter] = DataBase.math1013SecA[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecD.length; j++) {
+					adaptive[counter] = DataBase.math1013SecD[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecF.length; j++) {
+					adaptive[counter] = DataBase.math1013SecF[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.math1013SecL.length; j++) {
+					adaptive[counter] = DataBase.math1013SecL[j];
+					++counter;
+				}
+				this.courseSecCounts.put("math1013", 4);
+			}
+			if (rawCourseList[i].equals("econ1010")) {
+				for (int j = 0; j < DataBase.econ1010SecG.length; j++) {
+					adaptive[counter] = DataBase.econ1010SecG[j];
+					++counter;
+				}
+				for (int j = 0; j < DataBase.econ1010SecM.length; j++) {
+					adaptive[counter] = DataBase.econ1010SecM[j];
+					++counter;
+				}
+				this.courseSecCounts.put("econ1010", 2);
+			}
+		}
+
+		for (int i = 0; i < adaptive.length; i++) {
+			if (adaptive[i] == null) {
+				adaptive = Arrays.copyOf(adaptive, i);
+				break;
+			}
+		}
+
+//		for (String string : adaptive) {
+//			System.out.println(string);
+//		}
+		return rawCourseList;
+	}
+}

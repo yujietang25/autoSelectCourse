@@ -1,0 +1,16 @@
+package mianThread;
+
+import java.util.LinkedList;
+
+class Main {
+	public static void main(String[] args) {
+		LinkedList<String[]> result = new Center().run();
+
+		for (String[] strings : result) {
+			for (String s : strings) {
+				System.out.println(s);
+			}
+			System.out.println("=================");
+		}
+	}
+}

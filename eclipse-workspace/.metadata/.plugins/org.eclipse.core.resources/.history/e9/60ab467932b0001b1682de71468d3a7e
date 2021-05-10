@@ -1,0 +1,38 @@
+package mianThread;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+
+import algorithm.AutoPickCoursesAlgorithm;
+
+public class Center {
+	private String[] courseListRaw;
+
+	public void run() {
+		String[] courListRaw = new getInputs().run();
+		this.courseListRaw = courListRaw;
+//		for (String string : courListRaw) {
+//			System.out.println(string);
+//		}
+		TransferToAdaptinveDataType TT = new TransferToAdaptinveDataType();
+		String[] adaptive = TT.rawCourseListToStream(courListRaw);
+		for (String string : adaptive) {
+			System.out.println(string);
+		}
+		HashMap<String, Integer> courseSecCounts = TT.getCourseSecCounts();
+		AutoPickCoursesAlgorithm auto = new AutoPickCoursesAlgorithm(courListRaw, adaptive, courListRaw.length,
+				courseSecCounts);
+		LinkedList<String[]> sample = auto.getIdealCourseList();
+		for (int i = 0; i < sample.size(); i++) {
+			for (int j = 0; j < sample.get(i).length; j++) {
+				System.out.println(j + ": " + sample.get(i)[j]);
+			}
+			System.out.println("==========");
+		}
+	}
+
+	public String[] getCourseListRaw() {
+		return courseListRaw;
+	}
+
+}

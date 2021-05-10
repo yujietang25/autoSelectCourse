@@ -1,0 +1,17 @@
+package mianThread;
+
+import java.util.HashMap;
+
+import algorithm.AutoPickCoursesAlgorithm;
+
+public class Center {
+	public void run() {
+		String[] courListRaw=new getInputs().run();
+//		for (String string : courListRaw) {
+//			System.out.println(string);
+//		}
+		TransferToAdaptinveDataType TT=new TransferToAdaptinveDataType().rawCourseListToStream(courListRaw);
+		HashMap<String, Integer> courseSecCounts=new TransferToAdaptinveDataType().rawCourseListToStream(courListRaw)
+		new AutoPickCoursesAlgorithm().getIdealCourseList(courListRaw, courListRaw.length);
+	}
+}

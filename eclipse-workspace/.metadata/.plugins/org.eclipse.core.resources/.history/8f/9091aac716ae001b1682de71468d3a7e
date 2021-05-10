@@ -1,0 +1,19 @@
+package mianThread;
+
+import database.DataBase;
+
+public class TransferToAdaptinveDataType {
+	public String[] rawCourseListToStream(String[] rawCourseList) {
+		int numOfSlelction=rawCourseList.length;
+		String[] adaptive=new String[200];
+		for(int i=0;i<numOfSlelction;i++) {
+			if(rawCourseList[i].equals("eecs1012")) {
+				for(int i=0;i<DataBase.eecs1012SecC.length;i++) {
+					adaptive[i]=DataBase.eecs1012SecA[i];
+				}
+				for(int )
+			}
+		}
+		return rawCourseList;
+	}
+}
