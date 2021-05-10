@@ -19,7 +19,7 @@ public class AutoPickCoursesAlgorithm {
 		if (num == 1) {
 			return One();
 		} else if (num == 2) {
-//			return Two();
+			return Two();
 		} else if (num == 3) {
 //			return Three();
 		} else if (num == 4) {
@@ -1122,23 +1122,31 @@ public class AutoPickCoursesAlgorithm {
 	}
 
 	private boolean ifConflict(String[] course1, String[] course2) {
-		for (int i = 0; i < course1.length; i++) {
-			if (course1[i] != "NULL" && course2[i] != "NULL") {
-				return true;
+		return false;
+	}
+
+	private boolean ifConflict(String[][] course1, String[][] course2) {
+		for (int i = 0; i < 22; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (course1[i][j].equals(course2[i][j])) {
+					return true;
+				}
 			}
 		}
 		return false;
 	}
 
-	private LinkedList<String[]> Two() {
+	private LinkedList<String[][]> Two() {
 		boolean flag = false;
-		String[] sortedList = new String[20];
+		String[][] sortedList = new String[22][5];
 		String courseName = "";
 		int anotherCourse = 0;
-		LinkedList<String[]> courseList1 = new LinkedList<>();
+		LinkedList<String[][]> courseList1 = new LinkedList<>();
 
-		for (int i = 0; i < sortedList.length; i++) {
-			sortedList[i] = "NULL";
+		for (int i = 0; i < 22; i++) {
+			for (int j = 0; j < 5; j++) {
+				sortedList[i][j] = "NULL";
+			}
 		}
 
 		for (int j = 0; j < adaptive.length; j++) {
@@ -1158,21 +1166,26 @@ public class AutoPickCoursesAlgorithm {
 					}
 					courseName = adaptive[j].substring(1);
 					courseList1.add(sortedList);
-					sortedList = new String[20];
-					for (int t = 0; t < sortedList.length; t++) {
-						sortedList[t] = "NULL";
+					sortedList = new String[22][5];
+					for (int i = 0; i < 22; i++) {
+						for (int k = 0; k < 5; k++) {
+							sortedList[i][k] = "NULL";
+						}
 					}
 					continue;
 				}
 			}
-			sortedList[Integer.parseInt(adaptive[j])] = courseName;
+			sortedList[Integer.parseInt(adaptive[j].substring(0, 2))][Integer
+					.parseInt(adaptive[j].substring(3, 4))] = courseName;
 		}
 
-		LinkedList<String[]> courseList2 = new LinkedList<>();
+		LinkedList<String[][]> courseList2 = new LinkedList<>();
 
-		sortedList = new String[20];
-		for (int t = 0; t < sortedList.length; t++) {
-			sortedList[t] = "NULL";
+		sortedList = new String[22][5];
+		for (int i = 0; i < 22; i++) {
+			for (int k = 0; k < 5; k++) {
+				sortedList[i][k] = "NULL";
+			}
 		}
 
 		for (int j = anotherCourse; j < adaptive.length; j++) {
@@ -1190,42 +1203,60 @@ public class AutoPickCoursesAlgorithm {
 					}
 					courseName = adaptive[j].substring(1);
 					courseList2.add(sortedList);
-					sortedList = new String[20];
-					for (int t = 0; t < sortedList.length; t++) {
-						sortedList[t] = "NULL";
+					sortedList = new String[22][5];
+					for (int i = 0; i < 22; i++) {
+						for (int k = 0; k < 5; k++) {
+							sortedList[i][k] = "NULL";
+						}
 					}
 					continue;
 				}
 			}
-			sortedList[Integer.parseInt(adaptive[j])] = courseName;
+			sortedList[Integer.parseInt(adaptive[j].substring(0, 2))][Integer
+					.parseInt(adaptive[j].substring(3, 4))] = courseName;
 		}
 		courseList2.add(sortedList);
 
-		LinkedList<String[]> mergedCourse = new LinkedList<>();
+		for (String[][] strings : courseList1) {
+			for (String[] strings2 : strings) {
+				for (String strings3 : strings2) {
+					System.out.print(String.format("%-15s", strings3));
+				}
+				System.out.println();
+			}
+			System.out.println("+++++++++++++++++++++++");
+		}
 
+		LinkedList<String[][]> mergedCourse = new LinkedList<>();
 		for (int i = 0; i < courseList1.size(); i++) {
 			for (int j = 0; j < courseList2.size(); j++) {
 				if (this.ifConflict(courseList1.get(i), courseList2.get(j))) {
 					continue;
 				} else {
-					sortedList = new String[20];
-					for (int t = 0; t < sortedList.length; t++) {
-						sortedList[t] = "NULL";
-					}
-
-					for (int k = 0; k < courseList1.get(i).length; k++) {
-						if (courseList1.get(i)[k].equals("NULL")) {
-							continue;
-						} else {
-							sortedList[k] = courseList1.get(i)[k];
+					sortedList = new String[22][5];
+					for (int t = 0; t < 22; t++) {
+						for (int k = 0; k < 5; k++) {
+							sortedList[t][k] = "NULL";
 						}
 					}
 
-					for (int k = 0; k < courseList2.get(j).length; k++) {
-						if (courseList2.get(j)[k].equals("NULL")) {
-							continue;
-						} else {
-							sortedList[k] = courseList2.get(j)[k];
+					for (int x = 0; x < 22; x++) {
+						for (int y = 0; y < 5; y++) {
+							if (courseList1.get(i)[x][y].equals("NULL")) {
+								continue;
+							} else {
+								sortedList[x][y] = courseList1.get(i)[x][y];
+							}
+						}
+					}
+
+					for (int x = 0; x < 22; x++) {
+						for (int y = 0; y < 5; y++) {
+							if (courseList2.get(j)[x][y].equals("NULL")) {
+								continue;
+							} else {
+								sortedList[x][y] = courseList2.get(j)[x][y];
+							}
 						}
 					}
 					mergedCourse.add(sortedList);
@@ -1238,7 +1269,7 @@ public class AutoPickCoursesAlgorithm {
 	private LinkedList<String[][]> One() {
 		boolean flag = false;
 		String[][] sortedList = new String[22][5];
-		String course1 = "";
+		String courseName = "";
 		LinkedList<String[][]> mergedCourse = new LinkedList<>();
 
 		for (int i = 0; i < 22; i++) {
@@ -1250,13 +1281,13 @@ public class AutoPickCoursesAlgorithm {
 		for (int j = 0; j < adaptive.length; j++) {
 			if (flag == false) {
 				if (adaptive[j].substring(0, 1).equals("X")) {
-					course1 = adaptive[j].substring(1);
+					courseName = adaptive[j].substring(1);
 					flag = true;
 					continue;
 				}
 			} else {
 				if (adaptive[j].substring(0, 1).equals("X")) {
-					course1 = adaptive[j].substring(1);
+					courseName = adaptive[j].substring(1);
 					mergedCourse.add(sortedList);
 					sortedList = new String[22][5];
 					for (int i = 0; i < 22; i++) {
@@ -1267,7 +1298,8 @@ public class AutoPickCoursesAlgorithm {
 					continue;
 				}
 			}
-			sortedList[Integer.parseInt(adaptive[j].substring(0,2))][Integer.parseInt(adaptive[j].substring(3,4))] = course1;
+			sortedList[Integer.parseInt(adaptive[j].substring(0, 2))][Integer
+					.parseInt(adaptive[j].substring(3, 4))] = courseName;
 		}
 		mergedCourse.add(sortedList);
 		return mergedCourse;
