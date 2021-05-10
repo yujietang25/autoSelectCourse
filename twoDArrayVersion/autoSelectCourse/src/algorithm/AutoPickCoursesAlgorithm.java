@@ -14,20 +14,20 @@ public class AutoPickCoursesAlgorithm {
 		this.num = num;
 	}
 
-	public LinkedList<String[]> getIdealCourseList() {
+	public LinkedList<String[][]> getIdealCourseList() {
 
 		if (num == 1) {
 			return One();
 		} else if (num == 2) {
-			return Two();
+//			return Two();
 		} else if (num == 3) {
-			return Three();
+//			return Three();
 		} else if (num == 4) {
-			return Four();
+//			return Four();
 		} else if (num == 5) {
-			return Five();
+//			return Five();
 		} else if (num == 6) {
-			return Six();
+//			return Six();
 		} else if (num < 1) {
 			System.out.println("\nError :2,所选的课程数量未定义，请保持所选的课程数量在1-6门之间！");
 			System.exit(2);
@@ -1235,14 +1235,16 @@ public class AutoPickCoursesAlgorithm {
 		return mergedCourse;
 	}
 
-	private LinkedList<String[]> One() {
+	private LinkedList<String[][]> One() {
 		boolean flag = false;
-		String[] sortedList = new String[20];
+		String[][] sortedList = new String[22][5];
 		String course1 = "";
-		LinkedList<String[]> mergedCourse = new LinkedList<>();
+		LinkedList<String[][]> mergedCourse = new LinkedList<>();
 
-		for (int i = 0; i < sortedList.length; i++) {
-			sortedList[i] = "NULL";
+		for (int i = 0; i < 22; i++) {
+			for (int j = 0; j < 5; j++) {
+				sortedList[i][j] = "NULL";
+			}
 		}
 
 		for (int j = 0; j < adaptive.length; j++) {
@@ -1256,14 +1258,16 @@ public class AutoPickCoursesAlgorithm {
 				if (adaptive[j].substring(0, 1).equals("X")) {
 					course1 = adaptive[j].substring(1);
 					mergedCourse.add(sortedList);
-					sortedList = new String[20];
-					for (int t = 0; t < sortedList.length; t++) {
-						sortedList[t] = "NULL";
+					sortedList = new String[22][5];
+					for (int i = 0; i < 22; i++) {
+						for (int k = 0; k < 5; k++) {
+							sortedList[i][k] = "NULL";
+						}
 					}
 					continue;
 				}
 			}
-			sortedList[Integer.parseInt(adaptive[j])] = course1;
+			sortedList[Integer.parseInt(adaptive[j].substring(0,2))][Integer.parseInt(adaptive[j].substring(3,4))] = course1;
 		}
 		mergedCourse.add(sortedList);
 		return mergedCourse;

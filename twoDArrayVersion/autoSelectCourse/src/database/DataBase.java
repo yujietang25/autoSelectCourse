@@ -1,13 +1,14 @@
 package database;
 
 public class DataBase {
-	public static final String[] eecs1012SecD = { "Xeecs1012SecD", "2-0", "3-0", "4-0", "5-0", "2-2", "3-2", "4-2",
-			"5-2", "2-4", "3-4", "4-4", "5-4" };
-	public static final String[] eecs1012SecA = { "Xeecs1012SecA", "2-1", "3-1", "4-1", "5-1", "6-1", "7-1", "2-3",
-			"3-3", "4-3", "5-3", "6-3", "7-3" };
-	public static final String[] eecs1012SecB = { "Xeecs1012SecB", "2-2", "3-2", "4-2", "5-2", "6-2", "7-2", "2-4",
-			"3-4", "4-4", "5-4", "6-4", "7-4" };
-	public static final String[] eecs1012SecC = { "Xeecs1012SecC", "5", "7", "8" };
+	public static final String[] eecs1012SecD = { "Xeecs1012SecD", "02-0", "03-0", "04-0", "05-0", "02-2", "03-2", "04-2",
+			"05-2", "02-4", "03-4", "04-4", "05-4" };
+	public static final String[] eecs1012SecA = { "Xeecs1012SecA", "02-1", "03-1", "04-1", "05-1", "06-1", "07-1", "02-3",
+			"03-3", "04-3", "05-3", "06-3", "07-3" };
+	public static final String[] eecs1012SecB = { "Xeecs1012SecB", "02-2", "03-2", "04-2", "05-2", "06-2", "07-2", "02-4",
+			"03-4", "04-4", "05-4", "06-4", "07-4" };
+	public static final String[] eecs1012SecC = { "Xeecs1012SecC", "16-0", "17-0", "18-0", "19-0", "16-2", "17-2",
+			"18-2", "19-2", "16-4", "17-4", "18-4", "19-4" };
 
 	public static final String[] econ1010SecG = { "Xecon1010SecG", "1", "3", "5", "7", "9" };
 	public static final String[] econ1010SecM = { "Xecon1010SecM", "2", "4", "6", "8", "10" };
