@@ -1,9 +1,12 @@
 package database;
 
 public class DataBase {
-	public static final String[] eecs1012SecD = { "Xeecs1012SecD", "1", "2", "3" };
-	public static final String[] eecs1012SecA = { "Xeecs1012SecA", "1", "3", "6", "10" };
-	public static final String[] eecs1012SecB = { "Xeecs1012SecB", "2", "4", "9" };
+	public static final String[] eecs1012SecD = { "Xeecs1012SecD", "2-0", "3-0", "4-0", "5-0", "2-2", "3-2", "4-2",
+			"5-2", "2-4", "3-4", "4-4", "5-4" };
+	public static final String[] eecs1012SecA = { "Xeecs1012SecA", "2-1", "3-1", "4-1", "5-1", "6-1", "7-1", "2-3",
+			"3-3", "4-3", "5-3", "6-3", "7-3" };
+	public static final String[] eecs1012SecB = { "Xeecs1012SecB", "2-2", "3-2", "4-2", "5-2", "6-2", "7-2", "2-4",
+			"3-4", "4-4", "5-4", "6-4", "7-4" };
 	public static final String[] eecs1012SecC = { "Xeecs1012SecC", "5", "7", "8" };
 
 	public static final String[] econ1010SecG = { "Xecon1010SecG", "1", "3", "5", "7", "9" };
