@@ -19,6 +19,7 @@ class Center {
 		AutoPickCoursesAlgorithm auto = new AutoPickCoursesAlgorithm(courListRaw, adaptive, courListRaw.length,
 				courseSecCounts);
 		this.printResult(auto.getIdealCourseList());
+//		auto.getIdealCourseList();
 	}
 
 	private void printResult(LinkedList<String[][]> result) {
@@ -49,6 +50,10 @@ class Center {
 			System.out.println("=================");
 			startTime = 7.5;
 			periodTime = 8.0;
+			for (String s : week) {
+				System.out.print(String.format("%-20s", s));
+			}
+			System.out.println();
 		}
 	}
 

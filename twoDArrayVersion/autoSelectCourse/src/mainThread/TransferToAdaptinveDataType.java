@@ -11,7 +11,7 @@ public class TransferToAdaptinveDataType {
 	public String[] rawCourseListToStream(String[] rawCourseList) {
 		int counter = 0;
 		int numOfSlelction = rawCourseList.length;
-		String[] adaptive = new String[200];
+		String[] adaptive = new String[400];
 		for (int i = 0; i < numOfSlelction; i++) {
 			if (rawCourseList[i].equals("chem1000")) {
 				for (int j = 0; j < DataBase.chem1000SecA.length; j++) {
@@ -30,7 +30,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.chem1000SecC[j];
 					++counter;
 				}
-				this.courseSecCounts.put("chem1000", 3);
+				this.courseSecCounts.put("chem1000", 4);
 			}
 			if (rawCourseList[i].equals("eecs1012")) {
 				for (int j = 0; j < DataBase.eecs1012SecD.length; j++) {
@@ -49,7 +49,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.eecs1012SecA[j];
 					++counter;
 				}
-				this.courseSecCounts.put("eecs1012", 3);
+				this.courseSecCounts.put("eecs1012", 4);
 			}
 			if (rawCourseList[i].equals("math2030")) {
 				for (int j = 0; j < DataBase.math2030SecF.length; j++) {
@@ -64,7 +64,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.math2030SecA[j];
 					++counter;
 				}
-				this.courseSecCounts.put("math2030", 2);
+				this.courseSecCounts.put("math2030", 3);
 			}
 			if (rawCourseList[i].equals("math1013")) {
 				for (int j = 0; j < DataBase.math1013SecA.length; j++) {
@@ -87,7 +87,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.math1013SecL[j];
 					++counter;
 				}
-				this.courseSecCounts.put("math1013", 4);
+				this.courseSecCounts.put("math1013", 5);
 			}
 			if (rawCourseList[i].equals("econ1010")) {
 				for (int j = 0; j < DataBase.econ1010SecG.length; j++) {
@@ -102,7 +102,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.econ1010SecT[j];
 					++counter;
 				}
-				this.courseSecCounts.put("econ1010", 2);
+				this.courseSecCounts.put("econ1010", 3);
 			}
 			if (rawCourseList[i].equals("eecs2030")) {
 				for (int j = 0; j < DataBase.eecs2030SecM.length; j++) {
@@ -117,7 +117,7 @@ public class TransferToAdaptinveDataType {
 					adaptive[counter] = DataBase.eecs2030SecL[j];
 					++counter;
 				}
-				this.courseSecCounts.put("econ1010", 2);
+				this.courseSecCounts.put("econ1010", 3);
 			}
 		}
 
