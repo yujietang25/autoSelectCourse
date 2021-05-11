@@ -11,7 +11,7 @@ public class TransferToAdaptinveDataType {
 	public String[] rawCourseListToStream(String[] rawCourseList) {
 		int counter = 0;
 		int numOfSlelction = rawCourseList.length;
-		String[] adaptive = new String[400];
+		String[] adaptive = new String[650];
 		for (int i = 0; i < numOfSlelction; i++) {
 			if (rawCourseList[i].equals("chem1000")) {
 				for (int j = 0; j < DataBase.chem1000SecA.length; j++) {

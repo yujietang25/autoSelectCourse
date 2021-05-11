@@ -12,14 +12,11 @@ class Center {
 		this.courListRaw = new getInputs().run();
 		TransferToAdaptinveDataType TT = new TransferToAdaptinveDataType();
 		String[] adaptive = TT.rawCourseListToStream(courListRaw);
-//		for (int i = 0; i < adaptive.length; i++) {
-//			System.out.println(String.format("adaptive[%d]: ", i) + adaptive[i]);
-//		}
+
 		HashMap<String, Integer> courseSecCounts = TT.getCourseSecCounts();
 		AutoPickCoursesAlgorithm auto = new AutoPickCoursesAlgorithm(courListRaw, adaptive, courListRaw.length,
 				courseSecCounts);
 		this.printResult(auto.getIdealCourseList());
-//		auto.getIdealCourseList();
 	}
 
 	private void printResult(LinkedList<String[][]> result) {
