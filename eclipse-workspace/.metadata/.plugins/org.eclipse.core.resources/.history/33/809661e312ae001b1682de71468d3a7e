@@ -1,9 +1,0 @@
-package mianThread;
-
-import java.util.Scanner;
-
-class getInputs {
-	public static void run() {
-		Scanner scan=new Scanner(System.in);
-	}
-}

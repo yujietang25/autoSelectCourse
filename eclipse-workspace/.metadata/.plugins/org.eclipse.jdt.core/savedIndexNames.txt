@@ -1,2 +1,0 @@
-INDEX VERSION 1.131+C:\Users\yujie\Desktop\autoSelectCourse\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
-2493712277.index
