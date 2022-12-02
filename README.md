@@ -1,4 +1,6 @@
-# 这里是自动排课的全部代码
-# 请下载成zip文件，然后解压其中的work space，用eclipse打开（打开eclipse时请选择刚刚下载的work space）
-# 如果遇到乱码，请联系我！
-# 作者：Yujie Tang(微信：kirito805)
+# Here is the full code for automatic class scheduling
+# Please download it as a zip file, then unzip the work space and open it with eclipse (please select the work space you just downloaded when opening eclipse)
+# If you encounter garbled codes, please contact me!
+# Author: Yujie Tang
+
+# I'm currently move project from Eclipse to IDEA.
