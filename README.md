@@ -6,4 +6,4 @@ If you encounter garbled codes, please contact me!
 
 Author: Yujie Tang
 
-# I'm currently move project from Eclipse to IDEA.
+I'm currently move project from Eclipse to IDEA.
